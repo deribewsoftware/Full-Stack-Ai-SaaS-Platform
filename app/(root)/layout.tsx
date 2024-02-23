@@ -1,10 +1,12 @@
+import MobileNav from "@/components/shared/MobileNav";
 import Sidebar from "@/components/shared/SideBar";
 
 const Layout = ({children}:{children:React.ReactNode}) => {
-  return ( <div className="flex flex-col">
+  return ( <main className="root">
    <Sidebar/>
+   <MobileNav/>
     {children}
-  </div> );
+  </main> );
 }
  
 export default Layout;
