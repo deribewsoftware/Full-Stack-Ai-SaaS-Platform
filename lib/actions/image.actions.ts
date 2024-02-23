@@ -2,13 +2,12 @@
 
 import { revalidatePath } from "next/cache";
 import { connectToDatabase } from "../database/mongoose";
-import { handleError } from "../utils";
-
-
 import Image from "../database/models/image.models";
 import { redirect } from "next/navigation";
 
 import { v2 as cloudinary } from 'cloudinary'
+import User from "../database/models/user.models";
+import { handleError } from "../handleError";
 
 const populateUser = (query: any) => query.populate({
   path: 'author',
